@@ -3,7 +3,7 @@
 /hrm_basic_parent/hrm_basic_util/target
 /hrm_support_parent/hrm_zuul_9527/target
 /hrm_support_parent/hrm_eureka_7001/target
+/hrm_support_parent/hrm_config_server/target
 /hrm_mybatisplus_gen/target
 /hrm_course_parent/hrm_course_service/target
 /hrm_course_parent/hrm_course_interface/target
-/hrm_support_parent/hrm_config_server/target

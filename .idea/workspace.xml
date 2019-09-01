@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b93ab76-e471-45ad-a799-fbca6b3f0552" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_course_parent/hrm_course_interface/src/main/java/com/zhang/hrm/client/CourseTypeClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_course_parent/hrm_course_interface/src/main/java/com/zhang/hrm/client/CourseTypeClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_course_parent/hrm_course_service/src/main/java/com/zhang/hrm/web/controller/CourseTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_course_parent/hrm_course_service/src/main/java/com/zhang/hrm/web/controller/CourseTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_course_parent/hrm_course_service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_course_parent/hrm_course_service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_management_parent/hrm_management_interface/src/main/java/com/zhang/hrm/client/SystemdictionaryClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_management_parent/hrm_management_interface/src/main/java/com/zhang/hrm/client/SystemdictionaryClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_management_parent/hrm_management_interface/src/main/java/com/zhang/hrm/client/SystemdictionaryitemClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_management_parent/hrm_management_interface/src/main/java/com/zhang/hrm/client/SystemdictionaryitemClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_management_parent/hrm_management_service/src/main/java/com/zhang/hrm/web/controller/SystemdictionaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_management_parent/hrm_management_service/src/main/java/com/zhang/hrm/web/controller/SystemdictionaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_management_parent/hrm_management_service/src/main/java/com/zhang/hrm/web/controller/SystemdictionaryitemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_management_parent/hrm_management_service/src/main/java/com/zhang/hrm/web/controller/SystemdictionaryitemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_management_parent/hrm_management_service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_management_parent/hrm_management_service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/resources/templates/client.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/resources/templates/client.java.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/resources/templates/controller.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/resources/templates/controller.java.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_support_parent/hrm_config_server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_support_parent/hrm_config_server/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hrm_support_parent/hrm_zuul_9527/src/main/java/com/zhang/hrm/config/GlobalCorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/hrm_support_parent/hrm_zuul_9527/src/main/java/com/zhang/hrm/config/GlobalCorsConfig.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,38 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hrm_course_parent/hrm_course_service/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="56" column="21" lean-forward="true" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/resources/mybatisplus-course.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/java/GenteratorCode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="115" column="47" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+            <state relative-caret-position="108">
+              <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -119,7 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hrm_basic_parent/hrm_basic_util/src/main/java/com/zhang/hrm/util/encrypt/DES.java" />
         <option value="$PROJECT_DIR$/hrm_management_parent/pom.xml" />
         <option value="$PROJECT_DIR$/hrm_support_parent/hrm_zuul_9527/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/hrm_management_parent/hrm_management_service/src/main/resources/application.yml" />
@@ -170,6 +127,7 @@
         <option value="$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/resources/templates/controller.java.vm" />
         <option value="$PROJECT_DIR$/hrm_management_parent/hrm_management_service/src/main/java/com/zhang/hrm/web/controller/SystemdictionaryController.java" />
         <option value="$PROJECT_DIR$/hrm_management_parent/hrm_management_service/src/main/java/com/zhang/hrm/web/controller/SystemdictionaryitemController.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -192,7 +150,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-57" />
     <option name="y" value="46" />
     <option name="width" value="697" />
@@ -376,7 +334,7 @@
       <workItem from="1567238462731" duration="2918000" />
       <workItem from="1567261273469" duration="12519000" />
       <workItem from="1567314015569" duration="7446000" />
-      <workItem from="1567337275142" duration="3642000" />
+      <workItem from="1567337275142" duration="4208000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交代码">
       <created>1567261417230</created>
@@ -435,10 +393,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50670000" />
+    <option name="totallyTimeSpent" value="51236000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26172465" />
@@ -840,13 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/resources/mybatisplus-course.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/java/GenteratorCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
@@ -854,10 +805,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hrm_mybatisplus_gen/src/main/resources/mybatisplus-course.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        <state relative-caret-position="108">
+          <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
         </state>
       </provider>
     </entry>
