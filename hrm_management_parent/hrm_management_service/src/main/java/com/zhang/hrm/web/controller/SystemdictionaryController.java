@@ -15,12 +15,12 @@ import java.util.List;
 @RequestMapping("/systemdictionary")
 public class SystemdictionaryController {
     @Autowired
-    public ISystemdictionaryService systemdictionaryService;
+    private ISystemdictionaryService systemdictionaryService;
 
     /**
      * 保存和修改公用的
      * @param systemdictionary 传递的实体
-     * @return Ajaxresult转换结果
+     * @return AjaxResult转换结果
      */
     @PutMapping
     public AjaxResult addOrEdit(@RequestBody Systemdictionary systemdictionary) {
@@ -53,14 +53,14 @@ public class SystemdictionaryController {
         }
     }
 
-    //通过id获取用户
+    //通过id获取对象
     @GetMapping(value = "{id}")
     public Systemdictionary get(@PathVariable("id") Long id) {
         return systemdictionaryService.selectById(id);
     }
 
     /**
-    * 查看所有的员工信息
+    * 查看所有的对象信息
     * @return
     */
     @PatchMapping

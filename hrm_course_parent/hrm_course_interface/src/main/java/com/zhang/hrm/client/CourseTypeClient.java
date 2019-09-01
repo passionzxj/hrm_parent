@@ -14,10 +14,11 @@ import java.util.List;
         fallbackFactory = CourseTypeClientHystrixFallbackFactory.class)
 @RequestMapping("/courseType")
 public interface CourseTypeClient {
+
     /**
      * 保存和修改公用的
      * @param courseType 传递的实体
-     * @return Ajaxresult转换结果
+     * @return AjaxResult转换结果
      */
     @PutMapping
     AjaxResult addOrEdit(CourseType courseType);
@@ -34,13 +35,12 @@ public interface CourseTypeClient {
     @GetMapping(value = "{id}")
         CourseType get(@PathVariable("id") Long id);
 
-
     /**
      * 查看所有的员工信息
      * @return
      */
     @PatchMapping
-    public List<CourseType> list();
+    List<CourseType> list();
 
     /**
      * 分页查询数据

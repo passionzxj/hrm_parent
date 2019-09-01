@@ -17,7 +17,7 @@ public interface SystemdictionaryitemClient {
     /**
      * 保存和修改公用的
      * @param systemdictionaryitem 传递的实体
-     * @return Ajaxresult转换结果
+     * @return AjaxResult转换结果
      */
     @PutMapping
     AjaxResult addOrEdit(Systemdictionaryitem systemdictionaryitem);
@@ -34,13 +34,12 @@ public interface SystemdictionaryitemClient {
     @GetMapping(value = "{id}")
         Systemdictionaryitem get(@PathVariable("id") Long id);
 
-
     /**
      * 查看所有的员工信息
      * @return
      */
     @PatchMapping
-    public List<Systemdictionaryitem> list();
+    List<Systemdictionaryitem> list();
 
     /**
      * 分页查询数据

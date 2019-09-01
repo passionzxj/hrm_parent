@@ -14,10 +14,11 @@ import java.util.List;
         fallbackFactory = SystemdictionaryClientHystrixFallbackFactory.class)
 @RequestMapping("/systemdictionary")
 public interface SystemdictionaryClient {
+
     /**
      * 保存和修改公用的
      * @param systemdictionary 传递的实体
-     * @return Ajaxresult转换结果
+     * @return AjaxResult转换结果
      */
     @PutMapping
     AjaxResult addOrEdit(Systemdictionary systemdictionary);
@@ -34,13 +35,12 @@ public interface SystemdictionaryClient {
     @GetMapping(value = "{id}")
         Systemdictionary get(@PathVariable("id") Long id);
 
-
     /**
      * 查看所有的员工信息
      * @return
      */
     @PatchMapping
-    public List<Systemdictionary> list();
+    List<Systemdictionary> list();
 
     /**
      * 分页查询数据

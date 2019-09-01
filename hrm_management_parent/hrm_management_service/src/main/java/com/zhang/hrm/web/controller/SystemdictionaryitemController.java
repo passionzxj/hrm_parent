@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/systemdictionaryitem")
 public class SystemdictionaryitemController {
     @Autowired
-    public ISystemdictionaryitemService systemdictionaryitemService;
+    private ISystemdictionaryitemService systemdictionaryitemService;
 
     /**
      * 保存和修改公用的
@@ -53,14 +53,14 @@ public class SystemdictionaryitemController {
         }
     }
 
-    //通过id获取用户
+    //通过id获取对象
     @GetMapping(value = "{id}")
     public Systemdictionaryitem get(@PathVariable("id") Long id) {
         return systemdictionaryitemService.selectById(id);
     }
 
     /**
-    * 查看所有的员工信息
+    * 查看所有的对象信息
     * @return
     */
     @PatchMapping

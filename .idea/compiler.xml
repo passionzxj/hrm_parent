@@ -8,9 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="hrm_eureka_7001" />
         <module name="hrm_basic_util" />
+        <module name="hrm_course_interface" />
         <module name="hrm_management_service" />
         <module name="hrm_management_interface" />
         <module name="hrm_config_server" />
+        <module name="hrm_course_service" />
         <module name="hrm_zuul_9527" />
         <module name="hrm_mybatisplus_gen" />
       </profile>

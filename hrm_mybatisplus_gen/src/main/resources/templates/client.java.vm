@@ -14,10 +14,11 @@ import java.util.List;
         fallbackFactory = ${entity}ClientHystrixFallbackFactory.class)
 @RequestMapping("/${table.entityPath}")
 public interface ${entity}Client {
+
     /**
      * 保存和修改公用的
      * @param ${table.entityPath} 传递的实体
-     * @return Ajaxresult转换结果
+     * @return AjaxResult转换结果
      */
     @PutMapping
     AjaxResult addOrEdit(${entity} ${table.entityPath});
@@ -34,13 +35,12 @@ public interface ${entity}Client {
     @GetMapping(value = "{id}")
         ${entity} get(@PathVariable("id") Long id);
 
-
     /**
      * 查看所有的员工信息
      * @return
      */
     @PatchMapping
-    public List<${entity}> list();
+    List<${entity}> list();
 
     /**
      * 分页查询数据

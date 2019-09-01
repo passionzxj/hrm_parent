@@ -15,12 +15,12 @@ import java.util.List;
 @RequestMapping("/${table.entityPath}")
 public class ${entity}Controller {
     @Autowired
-    public ${table.serviceName} ${table.entityPath}Service;
+    private ${table.serviceName} ${table.entityPath}Service;
 
     /**
      * 保存和修改公用的
      * @param ${table.entityPath} 传递的实体
-     * @return Ajaxresult转换结果
+     * @return AjaxResult转换结果
      */
     @PutMapping
     public AjaxResult addOrEdit(@RequestBody ${entity} ${table.entityPath}) {
@@ -53,14 +53,14 @@ public class ${entity}Controller {
         }
     }
 
-    //通过id获取用户
+    //通过id获取对象
     @GetMapping(value = "{id}")
     public ${entity} get(@PathVariable("id") Long id) {
         return ${table.entityPath}Service.selectById(id);
     }
 
     /**
-    * 查看所有的员工信息
+    * 查看所有的对象信息
     * @return
     */
     @PatchMapping
