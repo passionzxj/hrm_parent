@@ -28,11 +28,10 @@ public class Swagger2 {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("系统管理中心api")
-                .description("系统管理中心接口文档说明")
+                .title("课程中心系统api")
+                .description("课程中心系统接口文档说明")
                 .contact(new Contact("zhangxinjian", "www.zhang.com", "884736569@qq.com"))
                 .version("1.0")
                 .build();
     }
-
 }
