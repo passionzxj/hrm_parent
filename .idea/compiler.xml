@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="hrm_fastdfs_interface" />
+        <module name="hrm_fastdfs_service" />
         <module name="hrm_eureka_7001" />
         <module name="hrm_basic_util" />
         <module name="hrm_course_interface" />

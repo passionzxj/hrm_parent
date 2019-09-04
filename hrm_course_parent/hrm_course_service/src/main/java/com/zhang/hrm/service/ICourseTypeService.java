@@ -1,7 +1,9 @@
 package com.zhang.hrm.service;
 
-import com.zhang.hrm.domain.CourseType;
 import com.baomidou.mybatisplus.service.IService;
+import com.zhang.hrm.domain.CourseType;
+import com.zhang.hrm.query.CourseTypeQuery;
+import com.zhang.hrm.util.PageList;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface ICourseTypeService extends IService<CourseType> {
 
+    PageList<CourseType> selectPageList(CourseTypeQuery query);
 }

@@ -76,7 +76,7 @@ public class ${entity}Controller {
     */
     @PostMapping
     public PageList<${entity}> json(@RequestBody ${entity}Query query) {
-        Page<${entity}> page = new Page<${entity}>(query.getPage(), query.getRows());
+        Page<${entity}> page = new Page<${entity}>(query.getPage(), query.getPageSize());
         page = ${table.entityPath}Service.selectPage(page);
         return new PageList<${entity}>(page.getTotal(), page.getRecords());
     }

@@ -64,8 +64,9 @@ public class SystemdictionaryitemController {
     * @return
     */
     @PatchMapping
-    public List<Systemdictionaryitem> list() {
-        return systemdictionaryitemService.selectList(null);
+    public List<Systemdictionaryitem> list(String sn) {
+//        return systemdictionaryitemService.selectList(null);
+        return systemdictionaryitemService.selectListBySn(sn);
     }
 
     /**
@@ -76,7 +77,7 @@ public class SystemdictionaryitemController {
     */
     @PostMapping
     public PageList<Systemdictionaryitem> json(@RequestBody SystemdictionaryitemQuery query) {
-        Page<Systemdictionaryitem> page = new Page<Systemdictionaryitem>(query.getPage(), query.getRows());
+        Page<Systemdictionaryitem> page = new Page<Systemdictionaryitem>(query.getPage(), query.getPageSize());
         page = systemdictionaryitemService.selectPage(page);
         return new PageList<Systemdictionaryitem>(page.getTotal(), page.getRecords());
     }

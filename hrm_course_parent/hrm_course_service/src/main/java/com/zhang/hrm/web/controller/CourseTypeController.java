@@ -1,11 +1,10 @@
 package com.zhang.hrm.web.controller;
 
-import com.zhang.hrm.service.ICourseTypeService;
 import com.zhang.hrm.domain.CourseType;
 import com.zhang.hrm.query.CourseTypeQuery;
+import com.zhang.hrm.service.ICourseTypeService;
 import com.zhang.hrm.util.AjaxResult;
 import com.zhang.hrm.util.PageList;
-import com.baomidou.mybatisplus.plugins.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,8 +76,9 @@ public class CourseTypeController {
     */
     @PostMapping
     public PageList<CourseType> json(@RequestBody CourseTypeQuery query) {
-        Page<CourseType> page = new Page<CourseType>(query.getPage(), query.getRows());
-        page = courseTypeService.selectPage(page);
-        return new PageList<CourseType>(page.getTotal(), page.getRecords());
+//        Page<CourseType> page = new Page<CourseType>(query.getPage(), query.getRows());
+//        page = courseTypeService.selectPage(page);
+//        return new PageList<CourseType>(page.getTotal(), page.getRecords());
+        return courseTypeService.selectPageList(query);
     }
 }

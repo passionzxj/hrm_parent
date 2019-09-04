@@ -44,8 +44,8 @@ public class ISystemdictionaryServiceTest {
     public void testJson() throws Exception{
         SystemdictionaryQuery query = new SystemdictionaryQuery();
         query.setPage(1);
-        query.setRows(3);
-        Page<Systemdictionary> page = new Page<Systemdictionary>(query.getPage(), query.getRows());
+        query.setPageSize(3);
+        Page<Systemdictionary> page = new Page<Systemdictionary>(query.getPage(), query.getPageSize());
         page = systemdictionaryService.selectPage(page);
         PageList<Systemdictionary> pageList = new PageList<>(page.getTotal(),page.getRecords());
         System.out.println(pageList.getTotal());
