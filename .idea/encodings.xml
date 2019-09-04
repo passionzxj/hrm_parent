@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_basic_parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_basic_parent/hrm_basic_util" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_basic_parent/hrm_fastdfs_interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_basic_parent/hrm_fastdfs_service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_course_parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_course_parent/hrm_course_interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_course_parent/hrm_course_service" charset="UTF-8" />

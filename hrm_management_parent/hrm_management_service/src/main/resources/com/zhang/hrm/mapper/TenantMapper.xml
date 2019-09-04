@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhang.hrm.mapper.TenantMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zhang.hrm.domain.Tenant">
+        <id column="id" property="id" />
+        <result column="companyName" property="companyName" />
+        <result column="companyNum" property="companyNum" />
+        <result column="registerTime" property="registerTime" />
+        <result column="state" property="state" />
+        <result column="address" property="address" />
+        <result column="logo" property="logo" />
+    </resultMap>
+<!--    void saveTenantMeal(List<Map<String, Long>> tenantMeal);-->
+    <insert id="saveTenantMeal" parameterType="list">
+        insert into t_tenant_meal (meal_id,tenant_id) values
+        <foreach collection="list" separator="," item="item">
+            (#{item.mealId},#{item.tenantId})
+        </foreach>
+    </insert>
+<!--    void removeTenantMeal(Serializable id);-->
+    <delete id="removeTenantMeal" parameterType="long">
+        delete from t_tenant_meal where tenant_id = #{id}
+    </delete>
+</mapper>
