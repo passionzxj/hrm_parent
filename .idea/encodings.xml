@@ -4,13 +4,20 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_basic_parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_basic_parent/hrm_basic_util" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hrm_basic_parent/hrm_fastdfs_interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_basic_parent/hrm_fastdfs_base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_basic_parent/hrm_fastdfs_client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_basic_parent/hrm_fastdfs_service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_common_parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_common_parent/hrm_es_base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_common_parent/hrm_es_client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_common_parent/hrm_es_service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_course_parent" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hrm_course_parent/hrm_course_interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_course_parent/hrm_course_base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_course_parent/hrm_course_client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_course_parent/hrm_course_service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_management_parent" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hrm_management_parent/hrm_management_interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_management_parent/hrm_management_base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_management_parent/hrm_management_client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_management_parent/hrm_management_service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_mybatisplus_gen" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_support_parent" charset="UTF-8" />

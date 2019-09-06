@@ -5,6 +5,8 @@ import com.zhang.hrm.domain.CourseType;
 import com.zhang.hrm.query.CourseTypeQuery;
 import com.zhang.hrm.util.PageList;
 
+import java.util.List;
+
 /**
  * <p>
  * 课程目录 服务类
@@ -16,4 +18,6 @@ import com.zhang.hrm.util.PageList;
 public interface ICourseTypeService extends IService<CourseType> {
 
     PageList<CourseType> selectPageList(CourseTypeQuery query);
+
+    List<CourseType> selectCourseTypeTree(Long pid);
 }

@@ -1,7 +1,7 @@
 package com.zhang.hrm.service;
 
-import com.zhang.hrm.domain.Course;
 import com.baomidou.mybatisplus.service.IService;
+import com.zhang.hrm.domain.Course;
 import com.zhang.hrm.query.CourseQuery;
 import com.zhang.hrm.util.PageList;
 
@@ -16,4 +16,8 @@ import com.zhang.hrm.util.PageList;
 public interface ICourseService extends IService<Course> {
 
     PageList<Course> selectListPage(CourseQuery query);
+
+    void batchOnline(Long[] ids);
+
+    void batchOffline(Long[] ids);
 }

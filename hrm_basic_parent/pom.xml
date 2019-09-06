@@ -13,8 +13,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>hrm_basic_util</module>
-        <module>hrm_fastdfs_interface</module>
+        <module>hrm_fastdfs_base</module>
         <module>hrm_fastdfs_service</module>
+        <module>hrm_fastdfs_client</module>
     </modules>
 
 

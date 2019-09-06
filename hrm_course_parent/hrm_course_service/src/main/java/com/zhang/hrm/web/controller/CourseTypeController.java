@@ -81,4 +81,13 @@ public class CourseTypeController {
 //        return new PageList<CourseType>(page.getTotal(), page.getRecords());
         return courseTypeService.selectPageList(query);
     }
+
+    /**
+     * 前台展示课程类型无限级
+     * @return
+     */
+    @GetMapping(value = "/treeData")
+    public List<CourseType> selectTreeData(){
+        return courseTypeService.selectCourseTypeTree(0L);
+    }
 }

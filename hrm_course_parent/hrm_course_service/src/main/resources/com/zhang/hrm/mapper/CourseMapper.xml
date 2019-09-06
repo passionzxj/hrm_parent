@@ -34,4 +34,18 @@
         left join t_course_type cy on cc.course_type_id = cy.id
         <include refid="whereSql"/>
     </select>
+<!--    void batchOnlineCourse(List<Long> idList);-->
+    <update id="batchOnlineCourse" parameterType="list">
+        update t_course set status = 1,start_time = now() where id in
+        <foreach collection="list" open="(" close=")" separator="," item="item">
+            #{item}
+        </foreach>
+    </update>
+<!--    void batchOfflineCourse(List<Long> idList);-->
+    <update id="batchOfflineCourse" parameterType="list">
+        update t_course set status = 0,end_time = now() where id in
+        <foreach collection="list" open="(" close=")" separator="," item="item">
+            #{item}
+        </foreach>
+    </update>
 </mapper>

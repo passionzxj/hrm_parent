@@ -1,8 +1,17 @@
-server:
-  port: 9003
 spring:
-  application:
-    name: hrm-fastdfs
+  profiles:
+    active: dev
+  cloud:
+    config:
+      #uri: http://localhost:8848 #通过哪个服务端拿配置   单机版可以不用在这儿配eureka
+      #可以直接放在github上面,但是配置服务者集群了的话就是要
+      #注册到eureka的,要在eureka中拿配置,就没必要配置uri了
+      discovery:
+        enabled: true #从eureka中拿配置
+        service-id: config-server #通过什么服务名来拿配置
+      label: master #从哪个节点来拿
+      name: application-fastdfs #在github上通过什么名称拿服务
+      profile: ${spring.profiles.active} #可以根据情况动态的切换开发环境
 eureka:
   client:
     service-url:

@@ -23,4 +23,9 @@ public interface CourseMapper extends BaseMapper<Course> {
 
     //分页+高级查询+关联对象查询
     List<Course> loadListPage(Page<Course> page, @Param("query") CourseQuery query);
+
+    //根据前台传的id数组批量修改相应对象的状态
+    void batchOnlineCourse(List<Long> idList);
+
+    void batchOfflineCourse(List<Long> idList);
 }

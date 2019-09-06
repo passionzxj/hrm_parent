@@ -6,6 +6,8 @@ import com.zhang.hrm.service.ICourseService;
 import com.zhang.hrm.temputil.UserInfoHolder;
 import com.zhang.hrm.util.AjaxResult;
 import com.zhang.hrm.util.PageList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/course")
 public class CourseController {
+
+    private Logger logger = LoggerFactory.getLogger(CourseController.class);
+
     @Autowired
     private ICourseService courseService;
 
@@ -59,7 +64,7 @@ public class CourseController {
     }
 
     //通过id获取对象
-    @GetMapping(value = "{id}")
+    @GetMapping(value = "/{id}")
     public Course get(@PathVariable("id") Long id) {
         return courseService.selectById(id);
     }
@@ -82,5 +87,39 @@ public class CourseController {
     @PostMapping
     public PageList<Course> json(@RequestBody CourseQuery query) {
         return courseService.selectListPage(query);
+    }
+
+    /**
+     * 批量上线课程
+     * @param ids
+     * @return
+     */
+    @PostMapping(value = "/online")
+    public AjaxResult online(@RequestBody Long[] ids){
+        try {
+            courseService.batchOnline(ids);
+            return AjaxResult.me();
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("上线失败了:"+e);
+            return AjaxResult.me().setSuccess(false).setMessage("上线失败了:"+e.getMessage());
+        }
+    }
+
+    /**
+     * 批量下线课程
+     * @param ids
+     * @return
+     */
+    @PostMapping(value = "/offline")
+    public AjaxResult offline(@RequestBody Long[] ids){
+        try {
+            courseService.batchOffline(ids);
+            return AjaxResult.me();
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("下线失败了:"+e);
+            return AjaxResult.me().setSuccess(false).setMessage("下线失败了:"+e.getMessage());
+        }
     }
 }

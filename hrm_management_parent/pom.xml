@@ -12,8 +12,9 @@
     <artifactId>hrm_management_parent</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>hrm_management_interface</module>
+        <module>hrm_management_base</module>
         <module>hrm_management_service</module>
+        <module>hrm_management_client</module>
     </modules>
 
 

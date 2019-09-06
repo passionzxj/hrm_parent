@@ -7,3 +7,11 @@
 /hrm_mybatisplus_gen/target
 /hrm_course_parent/hrm_course_service/target
 /hrm_course_parent/hrm_course_interface/target
+/hrm_basic_parent/hrm_fastdfs_base/target
+/hrm_common_parent/hrm_es_base/target
+/hrm_management_parent/hrm_management_base/target
+/hrm_basic_parent/hrm_fastdfs_client/target
+/hrm_common_parent/hrm_es_client/target
+/hrm_common_parent/hrm_es_service/target
+/hrm_course_parent/hrm_course_base/target
+/hrm_basic_parent/hrm_fastdfs_service/target
