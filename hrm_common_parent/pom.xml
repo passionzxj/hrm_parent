@@ -15,6 +15,9 @@
         <module>hrm_es_base</module>
         <module>hrm_es_service</module>
         <module>hrm_es_client</module>
+        <module>hrm_redis_base</module>
+        <module>hrm_redis_client</module>
+        <module>hrm_redis_service</module>
     </modules>
 
 

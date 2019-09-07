@@ -3,6 +3,7 @@ package com.zhang.hrm.service.impl;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.pagination.Pagination;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.zhang.hrm.cache.CourseTypeCache;
 import com.zhang.hrm.domain.CourseType;
 import com.zhang.hrm.mapper.CourseTypeMapper;
 import com.zhang.hrm.query.CourseTypeQuery;
@@ -11,6 +12,7 @@ import com.zhang.hrm.util.PageList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,6 +32,8 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
     @Autowired
     private CourseTypeMapper courseTypeMapper;
 
+    @Autowired
+    private CourseTypeCache cache;
     /**
      * 获得分页+高级查询+关联对象
      *
@@ -48,9 +52,18 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
     //获得菜单树
     @Override
     public List<CourseType> selectCourseTypeTree(Long pid) {
-//        return getCourseTypesCycle(pid);
-        return getCourseTypesRecursion(pid);
-
+        //先尝试从缓存中拿数据
+        List<CourseType> cacheCourseTypes = cache.getCourseTypes();
+        //缓存中没有数据,返回从数据库中拿到的数据,同时把数据添加到缓存
+        if (cacheCourseTypes == null || cacheCourseTypes.size() < 1){
+            System.out.println("从db中拿数据........");
+            List<CourseType> courseTypesDb = getCourseTypesCycle(pid);
+            cache.setCourseTypes(courseTypesDb);
+            return courseTypesDb;
+        }
+        //缓存中有数据,直接返回数据
+        System.out.println("缓存中直接返回数据......");
+        return cacheCourseTypes;
     }
 
     //递归的方式(不采用,发很多sql)
@@ -85,5 +98,33 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
             }
         }
         return result;
+    }
+    /**
+     * 对数据做增删改的时候要同步到缓存
+     */
+    private void setDataToCache() {
+        List<CourseType> courseTypes = selectCourseTypeTree(0L);
+        cache.setCourseTypes(courseTypes);
+    }
+
+    @Override
+    public boolean insert(CourseType entity) {
+        courseTypeMapper.insert(entity);
+        setDataToCache();
+        return true;
+    }
+
+    @Override
+    public boolean deleteById(Serializable id) {
+        courseTypeMapper.deleteById(id);
+        setDataToCache();
+        return true;
+    }
+
+    @Override
+    public boolean updateById(CourseType entity) {
+        courseTypeMapper.updateById(entity);
+        setDataToCache();
+        return true;
     }
 }
