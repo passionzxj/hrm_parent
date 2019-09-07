@@ -11,6 +11,9 @@
     <file url="file://$PROJECT_DIR$/hrm_common_parent/hrm_es_base" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_common_parent/hrm_es_client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_common_parent/hrm_es_service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_common_parent/hrm_redis_base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_common_parent/hrm_redis_client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hrm_common_parent/hrm_redis_service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_course_parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_course_parent/hrm_course_base" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hrm_course_parent/hrm_course_client" charset="UTF-8" />

@@ -34,6 +34,7 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
 
     @Autowired
     private CourseTypeCache cache;
+
     /**
      * 获得分页+高级查询+关联对象
      *
@@ -55,9 +56,13 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
         //先尝试从缓存中拿数据
         List<CourseType> cacheCourseTypes = cache.getCourseTypes();
         //缓存中没有数据,返回从数据库中拿到的数据,同时把数据添加到缓存
-        if (cacheCourseTypes == null || cacheCourseTypes.size() < 1){
+        if (cacheCourseTypes == null || cacheCourseTypes.size() < 1) {
             System.out.println("从db中拿数据........");
             List<CourseType> courseTypesDb = getCourseTypesCycle(pid);
+            //解决缓存穿透的问题,如果查出的没有,则设置一个空的数据到redis中,并设置过期时间
+            if (courseTypesDb == null || courseTypesDb.size() < 1) {
+                courseTypesDb = new ArrayList<>();
+            }
             cache.setCourseTypes(courseTypesDb);
             return courseTypesDb;
         }
@@ -99,6 +104,7 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
         }
         return result;
     }
+
     /**
      * 对数据做增删改的时候要同步到缓存
      */

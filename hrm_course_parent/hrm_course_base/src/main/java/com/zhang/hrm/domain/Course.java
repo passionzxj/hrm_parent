@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -155,6 +156,7 @@ public class Course extends Model<Course> {
         this.userName = userName;
     }
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     public Date getStartTime() {
         return startTime;
     }
@@ -163,6 +165,7 @@ public class Course extends Model<Course> {
         this.startTime = startTime;
     }
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     public Date getEndTime() {
         return endTime;
     }

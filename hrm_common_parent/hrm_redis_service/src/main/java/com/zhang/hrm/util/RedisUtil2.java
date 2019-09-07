@@ -4,7 +4,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
-public class JedisUtil2 {
+public class RedisUtil2 {
     //Redis服务器IP
     private static String ADDR = "localhost";
 

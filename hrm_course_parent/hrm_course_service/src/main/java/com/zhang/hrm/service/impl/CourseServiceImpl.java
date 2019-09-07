@@ -13,6 +13,7 @@ import com.zhang.hrm.service.ICourseService;
 import com.zhang.hrm.util.PageList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,9 +59,9 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         course.setStatus(0);
         courseMapper.insert(course);
         //课程详情,添加一个课程的时候把课程的id赋值给课程明细
-        CourseDetail detail = course.getDetail();
-        detail.setCourseId(course.getId());
-        courseDetailMapper.insert(detail);
+        CourseDetail courseDetail = course.getDetail();
+        courseDetail.setCourseId(course.getId());
+        courseDetailMapper.insert(courseDetail);
         return true;
     }
 
@@ -69,6 +70,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
      * @param ids
      */
     @Override
+    @Transactional
     public void batchOnline(Long[] ids) {
         List<Long> idList = (List<Long>) Arrays.asList(ids);
         //把上线的课程在DB中改变状态
@@ -84,6 +86,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
      * @param ids
      */
     @Override
+    @Transactional
     public void batchOffline(Long[] ids) {
         List<Long> idList = (List<Long>) Arrays.asList(ids);
         //把下线的课程在DB中改变状态
@@ -104,6 +107,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
 
     private Escourse Course2Escourse(Course course) {
         Escourse escourse = new Escourse();
+//        BeanUtils.copyProperties(course,escourse);
         escourse.setId(course.getId());
         escourse.setName(course.getName());
         escourse.setUsers(course.getUsers());
