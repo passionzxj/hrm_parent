@@ -20,6 +20,7 @@ public class GlobalCorsConfig {
         config.addAllowedOrigin("http://localhost:6001");
         config.addAllowedOrigin("http://admin.hrm.com");
         config.addAllowedOrigin("http://course.hrm.com");
+        config.addAllowedOrigin("http://gateway.hrm.com");
         //2) 是否发送Cookie信息
         config.setAllowCredentials(true);
         //3) 允许的请求方式

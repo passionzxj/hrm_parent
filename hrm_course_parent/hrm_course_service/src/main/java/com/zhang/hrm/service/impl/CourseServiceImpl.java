@@ -11,6 +11,7 @@ import com.zhang.hrm.mapper.CourseMapper;
 import com.zhang.hrm.query.CourseQuery;
 import com.zhang.hrm.service.ICourseService;
 import com.zhang.hrm.util.PageList;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -67,6 +68,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
 
     /**
      * 批量上线
+     *
      * @param ids
      */
     @Override
@@ -83,6 +85,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
 
     /**
      * 批量下线
+     *
      * @param ids
      */
     @Override
@@ -107,33 +110,9 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
 
     private Escourse Course2Escourse(Course course) {
         Escourse escourse = new Escourse();
-//        BeanUtils.copyProperties(course,escourse);
-        escourse.setId(course.getId());
-        escourse.setName(course.getName());
-        escourse.setUsers(course.getUsers());
-        escourse.setCourseTypeId(course.getCourseTypeId());
-        //type-同库
-        if (course.getCourseType() != null)
-            escourse.setCourseTypeName(course.getCourseType().getName());
-        //跨服务操作
         escourse.setGradeId(course.getGrade());
-        escourse.setGradeName(null);
-        escourse.setStatus(course.getStatus());
-        escourse.setTenantId(course.getTenantId());
-        escourse.setTenantName(course.getTenantName());
-        escourse.setUserId(course.getUserId());
-        escourse.setUserName(course.getUserName());
-        escourse.setStartTime(course.getStartTime());
-        escourse.setEndTime(course.getEndTime());
-        //Detail
-        escourse.setIntro(null);
-        //resource
-        escourse.setResources(null);
-        //market
-        escourse.setExpires(null);
-        escourse.setPrice(null);
-        escourse.setPriceOld(null);
-        escourse.setQq(null);
+        BeanUtils.copyProperties(course,escourse);
+        System.out.println(escourse);
         return escourse;
     }
 }

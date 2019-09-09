@@ -16,6 +16,7 @@
         <module>hrm_course_parent</module>
         <module>hrm_common_parent</module>
         <module>hrm_pager_parent</module>
+        <module>hrm_rabbitmq_parent</module>
     </modules>
 
     <properties>

@@ -109,7 +109,7 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
      * 对数据做增删改的时候要同步到缓存
      */
     private void setDataToCache() {
-        List<CourseType> courseTypes = selectCourseTypeTree(0L);
+        List<CourseType> courseTypes = getCourseTypesCycle(0L);
         cache.setCourseTypes(courseTypes);
     }
 

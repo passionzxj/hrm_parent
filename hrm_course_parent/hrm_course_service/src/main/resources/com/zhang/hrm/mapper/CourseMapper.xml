@@ -16,9 +16,16 @@
         <result column="userName" property="userName"/>
         <result column="start_time" property="startTime"/>
         <result column="end_time" property="endTime"/>
+        <!--关联课程类型-->
         <association property="courseType" javaType="CourseType">
             <id column="cyid" property="id"/>
             <result column="cyname" property="name"/>
+        </association>
+        <!--关联课程详情detail-->
+        <association property="detail" javaType="CourseDetail">
+            <id column="course_id" property="courseId"/>
+            <result column="description" property="description"/>
+            <result column="intro" property="intro"/>
         </association>
     </resultMap>
     <sql id="whereSql">
@@ -30,8 +37,10 @@
     </sql>
     <!--    List<Course> loadListPage(Page<Course> page, CourseQuery query);-->
     <select id="loadListPage" parameterType="CourseQuery" resultMap="CourseMap">
-        select cc.*,cy.id cyid,cy.name cyname from t_course cc
+        select cc.*,cy.id cyid,cy.name cyname,cd.* from t_course cc
         left join t_course_type cy on cc.course_type_id = cy.id
+        left join t_course_detail cd on cc.id = cd.course_id
+
         <include refid="whereSql"/>
     </select>
 <!--    void batchOnlineCourse(List<Long> idList);-->
