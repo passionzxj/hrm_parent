@@ -15,6 +15,7 @@
         <module>hrm_mybatisplus_gen</module>
         <module>hrm_course_parent</module>
         <module>hrm_common_parent</module>
+        <module>hrm_pager_parent</module>
     </modules>
 
     <properties>
