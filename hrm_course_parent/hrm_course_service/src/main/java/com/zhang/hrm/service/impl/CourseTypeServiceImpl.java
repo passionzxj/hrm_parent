@@ -1,9 +1,12 @@
 package com.zhang.hrm.service.impl;
 
+import com.alibaba.fastjson.JSONArray;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.pagination.Pagination;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.zhang.hrm.cache.CourseTypeCache;
+import com.zhang.hrm.client.PagerConfigClient;
+import com.zhang.hrm.client.RedisClient;
 import com.zhang.hrm.domain.CourseType;
 import com.zhang.hrm.mapper.CourseTypeMapper;
 import com.zhang.hrm.query.CourseTypeQuery;
@@ -31,9 +34,12 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
 
     @Autowired
     private CourseTypeMapper courseTypeMapper;
-
     @Autowired
     private CourseTypeCache cache;
+    @Autowired
+    private RedisClient redisClient;
+    @Autowired
+    private PagerConfigClient pagerConfigClient;
 
     /**
      * 获得分页+高级查询+关联对象
@@ -132,5 +138,27 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
         courseTypeMapper.updateById(entity);
         setDataToCache();
         return true;
+    }
+
+    /**
+     *初始化静态页面
+     */
+    @Override
+    public void initCourseSiteIndex() {
+        //前台上传模板zip文件到fastdfs
+        //把数据存到redis,有就直接拿,没有就数据库拿
+        List<CourseType> courseTypes = selectCourseTypeTree(0L);
+        String courseTypesStr = JSONArray.toJSONString(courseTypes);
+        String dataKey = "courseTypes";
+        redisClient.set(dataKey, courseTypesStr);
+        //调用静态化页面服务接口产生静态页面并上传到fastdfs
+        String pageName = "CourseIndex";
+        Map<String, String> map = new HashMap<>();
+        map.put("pageName",pageName);
+        map.put("dataKey",dataKey);
+        pagerConfigClient.startStaticPage(map);
+        //把页面放入消息队列中,让pageAgent接收到消息并下载
+        //在静态化服务中做
+
     }
 }

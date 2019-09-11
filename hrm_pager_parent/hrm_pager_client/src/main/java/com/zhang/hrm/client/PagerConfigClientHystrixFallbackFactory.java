@@ -8,6 +8,7 @@ import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author zhangxj
@@ -43,6 +44,13 @@ public class PagerConfigClientHystrixFallbackFactory implements FallbackFactory<
             public PageList<PagerConfig> json(PagerConfigQuery query) {
                 return null;
             }
+
+            @Override
+            public AjaxResult startStaticPage(Map<String, String> map) {
+                return null;
+            }
+
+
         };
     }
 }

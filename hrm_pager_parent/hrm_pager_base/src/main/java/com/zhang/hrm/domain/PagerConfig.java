@@ -24,6 +24,7 @@ public class PagerConfig extends Model<PagerConfig> {
     private Long id;
     @TableField("template_url")
     private String templateUrl;
+    private String templateName;
     /**
      * redis中数据所对应key
      */
@@ -98,6 +99,14 @@ public class PagerConfig extends Model<PagerConfig> {
 
     public void setPageId(Long pageId) {
         this.pageId = pageId;
+    }
+
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
     }
 
     @Override

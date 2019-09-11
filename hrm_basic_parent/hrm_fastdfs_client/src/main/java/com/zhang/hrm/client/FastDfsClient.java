@@ -1,6 +1,7 @@
 package com.zhang.hrm.client;
 
 import com.zhang.hrm.util.AjaxResult;
+import feign.Response;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.FeignClientsConfiguration;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -9,9 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletResponse;
-
-@FeignClient(value = "ZUUL-GATEWAY", configuration = FeignClientsConfiguration.class,
+@FeignClient(value = "HRM-FASTDFS", configuration = FeignClientsConfiguration.class,
         fallbackFactory = FastDfsClientHystrixFallbackFactory.class)
 @RequestMapping("/fastdfs")
 public interface FastDfsClient {
@@ -35,6 +34,6 @@ public interface FastDfsClient {
      * @param path
      */
     @GetMapping(value = "/download")
-    void download(String path, HttpServletResponse response);
+    Response download(String path);
 
 }

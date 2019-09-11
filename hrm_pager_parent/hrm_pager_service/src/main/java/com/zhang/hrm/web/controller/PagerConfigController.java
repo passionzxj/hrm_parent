@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/pagerConfig")
@@ -79,5 +80,19 @@ public class PagerConfigController {
         Page<PagerConfig> page = new Page<PagerConfig>(query.getPage(), query.getPageSize());
         page = pagerConfigService.selectPage(page);
         return new PageList<PagerConfig>(page.getTotal(), page.getRecords());
+    }
+
+    //创建静态页面
+    @PostMapping("/startStaticPage")
+    public AjaxResult startStaticPage(@RequestBody Map<String, String> map){
+        String pageName = map.get("pageName");
+        String dataKey = map.get("dataKey");
+        try {
+            pagerConfigService.startStaticPage(pageName,dataKey);
+            return AjaxResult.me();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return AjaxResult.me().setSuccess(false).setMessage("静态化页面创建失败:"+e.getMessage());
+        }
     }
 }

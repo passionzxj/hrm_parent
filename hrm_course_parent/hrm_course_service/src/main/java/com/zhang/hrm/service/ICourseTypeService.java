@@ -20,4 +20,6 @@ public interface ICourseTypeService extends IService<CourseType> {
     PageList<CourseType> selectPageList(CourseTypeQuery query);
 
     List<CourseType> selectCourseTypeTree(Long pid);
+
+    void initCourseSiteIndex();
 }

@@ -63,5 +63,31 @@
             <artifactId>hrm_redis_client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--velocity的支持-->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zhang.hrm</groupId>
+            <artifactId>hrm_fastdfs_client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.csource</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zhang.hrm</groupId>
+            <artifactId>hrm_basic_rabbitmq</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

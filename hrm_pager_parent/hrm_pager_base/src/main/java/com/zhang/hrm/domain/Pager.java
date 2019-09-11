@@ -45,6 +45,8 @@ public class Pager extends Model<Pager> {
     @TableField("template_url")
     private String templateUrl;
 
+    private String templateName;
+
 
     public Long getId() {
         return id;
@@ -116,6 +118,14 @@ public class Pager extends Model<Pager> {
 
     public void setSite(Site site) {
         this.site = site;
+    }
+
+    public String getTemplateName() {
+        return templateName;
+    }
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
     }
 
     @Override

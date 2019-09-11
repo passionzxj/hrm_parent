@@ -1,7 +1,7 @@
 package com.zhang.hrm.service;
 
-import com.zhang.hrm.domain.PagerConfig;
 import com.baomidou.mybatisplus.service.IService;
+import com.zhang.hrm.domain.PagerConfig;
 
 /**
  * <p>
@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface IPagerConfigService extends IService<PagerConfig> {
 
+    void startStaticPage(String pageName,String dataKey);
 }

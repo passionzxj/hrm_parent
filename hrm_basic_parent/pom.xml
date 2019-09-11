@@ -16,6 +16,7 @@
         <module>hrm_fastdfs_base</module>
         <module>hrm_fastdfs_service</module>
         <module>hrm_fastdfs_client</module>
+        <module>hrm_basic_rabbitmq</module>
     </modules>
 
 
