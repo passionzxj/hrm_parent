@@ -4,8 +4,9 @@ package com.zhang.hrm.handler;
 import com.alibaba.fastjson.JSONObject;
 import com.rabbitmq.client.Channel;
 import com.zhang.hrm.client.FastDfsClient;
-import com.zhang.hrm.config.RabbitmqConfig;
+import com.zhang.hrm.config.RabbitmqConstant;
 import feign.Response;
+import org.apache.commons.io.IOUtils;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +15,12 @@ import org.springframework.stereotype.Component;
 import java.io.*;
 
 @Component
-public class DownLoadAndReceiveHandler {
+public class DownLoadStaticPageHandler {
 
     @Autowired
     private FastDfsClient fastDfsClient;
 
-    @RabbitListener(queues = RabbitmqConfig.HRM_COMMON_QUEUE)
+    @RabbitListener(queues = RabbitmqConstant.HRM_COMMON_QUEUE)
     public void receiveMsg(String msg, Message message, Channel channel) {
         //拿到的msg是一个json字符串
         //包含fdsType,staticPageUrl,physicalPath
@@ -51,7 +52,9 @@ public class DownLoadAndReceiveHandler {
         OutputStream outputStream =null;
         try {
             inputStream = response.body().asInputStream();
-            outputStream = new FileOutputStream(new File(physicalPath));
+            outputStream = new FileOutputStream(physicalPath);
+            //把response的输入流传到本地的输出流
+            IOUtils.copy(inputStream,outputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }finally {

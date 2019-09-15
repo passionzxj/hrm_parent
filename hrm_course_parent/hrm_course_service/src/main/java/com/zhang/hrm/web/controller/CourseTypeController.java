@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/courseType")
@@ -89,5 +90,14 @@ public class CourseTypeController {
     @GetMapping(value = "/treeData")
     public List<CourseType> selectTreeData(){
         return courseTypeService.selectCourseTypeTree(0L);
+    }
+
+    /**
+     * 前台页面点击课程类型后展示面包屑
+     * @return
+     */
+    @GetMapping(value = "/curmbs")
+    public List<Map<String,Object>> getCrumbs(Long CourseTypeId){
+        return courseTypeService.getCrumbs(CourseTypeId);
     }
 }

@@ -16,10 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * <p>
@@ -141,7 +138,7 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
     }
 
     /**
-     *初始化静态页面
+     * 初始化静态页面
      */
     @Override
     public void initCourseSiteIndex() {
@@ -154,11 +151,45 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
         //调用静态化页面服务接口产生静态页面并上传到fastdfs
         String pageName = "CourseIndex";
         Map<String, String> map = new HashMap<>();
-        map.put("pageName",pageName);
-        map.put("dataKey",dataKey);
+        map.put("pageName", pageName);
+        map.put("dataKey", dataKey);
         pagerConfigClient.startStaticPage(map);
         //把页面放入消息队列中,让pageAgent接收到消息并下载
         //在静态化服务中做
+    }
 
+    /**
+     * 根据页面上传入的课程类型,展示面包屑
+     *
+     * @param courseTypeId
+     * @return
+     */
+    @Override
+    public List<Map<String, Object>> getCrumbs(Long courseTypeId) {
+        ArrayList<Map<String, Object>> result = new ArrayList<>();
+        CourseType courseType = courseTypeMapper.selectById(courseTypeId);
+        String path = courseType.getPath();
+        String[] paths = path.split("\\.");//1 2 3
+        for (String ownerIdStr : paths) {
+            Map<String, Object> map = new HashMap<>();
+            Long ownerId = Long.valueOf(ownerIdStr);
+            CourseType ownCourseType = courseTypeMapper.selectById(ownerId);
+            map.put("ownCourseType", ownCourseType);
+            //通过自己查出父亲,然后父亲查出所有的儿子,再把自己排除,put到map中返回
+            List<CourseType> children = courseTypeMapper.selectList(
+                    new EntityWrapper<CourseType>().eq("pid", ownCourseType.getPid()));
+            Iterator<CourseType> iterator = children.iterator();
+            //干掉自己-边遍历边操作(正删改),要用迭代器
+            while (iterator.hasNext()) {
+                CourseType currentCourseType = iterator.next();
+                if (currentCourseType.getId().longValue() == ownCourseType.getId().longValue()) {
+                    iterator.remove();
+                    continue;
+                }
+            }
+            map.put("otherCourseTypes",children);
+            result.add(map);
+        }
+        return result;
     }
 }

@@ -7,4 +7,5 @@ package com.zhang.hrm.query;
  * @since 2019-09-03
  */
 public class CourseQuery extends BaseQuery {
+
 }

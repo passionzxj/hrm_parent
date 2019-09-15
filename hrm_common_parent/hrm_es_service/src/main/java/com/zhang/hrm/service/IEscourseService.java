@@ -5,6 +5,7 @@ import com.zhang.hrm.query.EscourseQuery;
 import com.zhang.hrm.util.PageList;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -15,6 +16,8 @@ import java.util.List;
  * @since 2019-09-05
  */
 public interface IEscourseService {
+
+
 
     void updateById(Escourse escourse);
 
@@ -31,4 +34,6 @@ public interface IEscourseService {
     void batchOnline(List<Escourse> esList);
 
     void batchOffline(List<Escourse> esList);
+
+    PageList<Map<String, Object>> esQuery(Map<String, Object> query);
 }

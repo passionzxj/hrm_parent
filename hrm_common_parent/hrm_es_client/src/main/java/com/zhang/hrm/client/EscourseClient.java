@@ -9,11 +9,15 @@ import org.springframework.cloud.openfeign.FeignClientsConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+
 @FeignClient(value = "HRM-ES", configuration = FeignClientsConfiguration.class,
         fallbackFactory = EscourseClientHystrixFallbackFactory.class)
 @RequestMapping("/esCourse")
 public interface EscourseClient {
 
+    @PostMapping("/esQuery")
+    PageList<Map<String, Object>> esQuery(Map<String, Object> query);
     /**
      * 保存和修改公用的
      *

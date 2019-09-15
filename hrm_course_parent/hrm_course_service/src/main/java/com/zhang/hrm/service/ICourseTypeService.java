@@ -6,6 +6,7 @@ import com.zhang.hrm.query.CourseTypeQuery;
 import com.zhang.hrm.util.PageList;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -22,4 +23,6 @@ public interface ICourseTypeService extends IService<CourseType> {
     List<CourseType> selectCourseTypeTree(Long pid);
 
     void initCourseSiteIndex();
+
+    List<Map<String, Object>> getCrumbs(Long courseTypeId);
 }

@@ -8,6 +8,7 @@ import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author zhangxj
@@ -19,6 +20,11 @@ public class EscourseClientHystrixFallbackFactory implements FallbackFactory<Esc
     @Override
     public EscourseClient create(Throwable throwable) {
         return new EscourseClient() {
+            @Override
+            public PageList<Map<String, Object>> esQuery(Map<String, Object> query) {
+                return null;
+            }
+
             @Override
             public AjaxResult addOrEdit(Escourse escourse) {
                 return null;

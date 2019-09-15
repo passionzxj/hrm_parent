@@ -5,6 +5,8 @@ import com.zhang.hrm.domain.Course;
 import com.zhang.hrm.query.CourseQuery;
 import com.zhang.hrm.util.PageList;
 
+import java.util.Map;
+
 /**
  * <p>
  *  服务类
@@ -20,4 +22,6 @@ public interface ICourseService extends IService<Course> {
     void batchOnline(Long[] ids);
 
     void batchOffline(Long[] ids);
+
+    PageList<Map<String, Object>> courseList(Map<String, Object> query);
 }

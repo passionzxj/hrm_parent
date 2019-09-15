@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/esCourse")
@@ -118,5 +119,10 @@ public class EscourseController {
             logger.error("下线失败了:" + e);
             return AjaxResult.me().setSuccess(false).setMessage("下线失败了:" + e.getMessage());
         }
+    }
+
+    @PostMapping("/esQuery")
+    PageList<Map<String, Object>> esQuery(@RequestBody Map<String, Object> query){
+        return escourseService.esQuery(query);
     }
 }

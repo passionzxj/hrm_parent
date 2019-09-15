@@ -17,6 +17,7 @@
         <module>hrm_common_parent</module>
         <module>hrm_pager_parent</module>
         <module>hrm_page_agent_parent</module>
+        <module>hrm_user_parent</module>
     </modules>
 
     <properties>

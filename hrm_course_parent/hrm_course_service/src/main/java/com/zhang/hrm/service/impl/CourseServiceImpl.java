@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -51,6 +52,12 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         Page<Course> page = new Page<>(query.getPage(), query.getPageSize());
         List<Course> rows = courseMapper.loadListPage(page, query);
         return new PageList<>(page.getTotal(), rows);
+    }
+
+    //前台Es查询
+    @Override
+    public PageList<Map<String, Object>> courseList(Map<String, Object> query) {
+        return EscourseClient.esQuery(query);
     }
 
     //添加课程
@@ -100,6 +107,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         escourseClient.batchDel(escourseList);
     }
 
+
     private List<Escourse> Course2EscourseList(List<Course> courses) {
         List<Escourse> list = new ArrayList<>();
         for (Course course : courses) {
@@ -111,7 +119,7 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
     private Escourse Course2Escourse(Course course) {
         Escourse escourse = new Escourse();
         escourse.setGradeId(course.getGrade());
-        BeanUtils.copyProperties(course,escourse);
+        BeanUtils.copyProperties(course, escourse);
         System.out.println(escourse);
         return escourse;
     }

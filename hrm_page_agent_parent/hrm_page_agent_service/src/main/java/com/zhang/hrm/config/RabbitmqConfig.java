@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitmqConfig {
 
     @Value("${rabbitmq.queueName.routingKey}")
-    private static String routingKey;
+    private String routingKey;
 
-    public static final String EXCHANGE_DIRECT_INFORM = "exchange_direct_inform";
-    public static final String HRM_COMMON_QUEUE = "hrm_common_queue";
+    public static final String EXCHANGE_DIRECT_INFORM = RabbitmqConstant.EXCHANGE_DIRECT_INFORM;
+    public static final String HRM_COMMON_QUEUE = RabbitmqConstant.HRM_COMMON_QUEUE;
 
     /**
      * 交换机配置

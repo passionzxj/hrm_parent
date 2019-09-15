@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/course")
@@ -152,5 +153,16 @@ public class CourseController {
             logger.error("下线失败了:" + e);
             return AjaxResult.me().setSuccess(false).setMessage("下线失败了:" + e.getMessage());
         }
+    }
+
+    /**
+     * 前台页面关于课程的列表页,使用ES查询
+     * 需要传入的值包括:keyword,courseType,priceMin,priceMax
+     * @param query
+     * @return
+     */
+    @PostMapping("/courseList")
+    public PageList<Map<String,Object>> courseList(@RequestBody Map<String,Object> query){
+        return courseService.courseList(query);
     }
 }

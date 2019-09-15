@@ -6,6 +6,7 @@ import com.zhang.hrm.util.FastDfsApiOpr;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,12 +19,12 @@ import java.io.OutputStream;
 @RequestMapping("/fastdfs")
 public class FastDfsController {
     private Logger logger = LoggerFactory.getLogger(FastDfsController.class);
-    @PostMapping(value = "/upload")
-    public String upload(@RequestParam("file") MultipartFile file){
+    @PostMapping(value = "/upload",produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}
+            , consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public String upload(@RequestPart(value = "file") MultipartFile file){
         try {
             String filename = file.getOriginalFilename();
             String substring = filename.substring(filename.lastIndexOf(".") + 1);
-            System.out.println("========="+substring);
             byte[] bytes = file.getBytes();
             return FastDfsApiOpr.upload(bytes,substring);
         } catch (IOException e) {
