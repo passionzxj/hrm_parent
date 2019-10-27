@@ -2,6 +2,7 @@ package com.zhang.hrm.util;
 
 import java.util.ArrayList;
 import java.util.List;
+
 //分页对象：前台页面只需两个属性，total(总数),rows（分页数据）就能实现分页
 public class PageList<T> {
     private long total;
@@ -36,6 +37,7 @@ public class PageList<T> {
         this.total = total;
         this.rows = rows;
     }
+
     //除了有参构造方法，还需要提供一个无参构造方法
     public PageList() {
     }

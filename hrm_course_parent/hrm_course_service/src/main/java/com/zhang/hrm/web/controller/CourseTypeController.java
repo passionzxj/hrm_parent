@@ -99,5 +99,6 @@ public class CourseTypeController {
     @GetMapping(value = "/curmbs")
     public List<Map<String,Object>> getCrumbs(Long CourseTypeId){
         return courseTypeService.getCrumbs(CourseTypeId);
+
     }
 }

@@ -63,3 +63,7 @@ public interface EscourseClient {
     @PostMapping(value = "/offline")
     AjaxResult batchDel(List<Escourse> esList);
 }
+
+
+
+

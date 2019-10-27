@@ -25,38 +25,17 @@ public class Course extends Model<Course> {
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
-    /**
-     * 课程名称
-     */
     private String name;
-    /**
-     * 适用人群
-     */
     private String users;
-    /**
-     * 课程大分类
-     */
     @TableField("course_type_id")
     private Long courseTypeId;
     @TableField(exist = false)
     private CourseType courseType;
-    /**
-     * 课程等级
-     */
     private Long grade;
-    /**
-     * 课程状态
-     */
     private Integer status;
-    /**
-     * 教育机构
-     */
     @TableField("tenant_id")
     private Long tenantId;
     private String tenantName;
-    /**
-     * 创建用户
-     */
     @TableField("user_id")
     private Long userId;
     private String userName;

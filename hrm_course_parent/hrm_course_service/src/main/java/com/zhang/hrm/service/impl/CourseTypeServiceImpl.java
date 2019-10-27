@@ -142,7 +142,7 @@ public class CourseTypeServiceImpl extends ServiceImpl<CourseTypeMapper, CourseT
      */
     @Override
     public void initCourseSiteIndex() {
-        //前台上传模板zip文件到fastdfs
+        //前台上传模板zip文件到fastDfs
         //把数据存到redis,有就直接拿,没有就数据库拿
         List<CourseType> courseTypes = selectCourseTypeTree(0L);
         String courseTypesStr = JSONArray.toJSONString(courseTypes);
